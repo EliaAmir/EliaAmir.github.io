@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elia Yacoub — IT Support Engineer &amp; Builder</title>
+<meta name="description" content="IT Support Engineer &amp; Builder. Cairo transit app, local AI agents, Hackintosh. 4+ years across SaaS support, BPO leadership, freelance Android.">
+
+<!-- Prevent FOUC: set theme before first paint -->
+<script>
+(function(){
+  var s=localStorage.getItem('theme');
+  if(s){document.documentElement.setAttribute('data-theme',s);}
+  else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark');}
+  else{document.documentElement.setAttribute('data-theme','light');}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/tabler-icons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f7f7f5;
+  --bg-tertiary: #f0efe8;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555550;
+  --text-tertiary: #888780;
+  --border: rgba(0,0,0,0.1);
+  --border-strong: rgba(0,0,0,0.18);
+  --accent-green: #0F6E56;
+  --accent-green-bg: #E1F5EE;
+  --accent-green-border: #5DCAA5;
+  --accent-purple: #3C3489;
+  --accent-purple-bg: #EEEDFE;
+  --accent-purple-border: #AFA9EC;
+  --accent-amber-bg: #FAEEDA;
+  --accent-amber-text: #633806;
+  --accent-amber-border: #EF9F27;
+  --accent-gray-bg: #F1EFE8;
+  --accent-gray-text: #444441;
+  --accent-gray-border: #B4B2A9;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  --linkedin-color: #0A66C2;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a18;
+  --bg-secondary: #222220;
+  --bg-tertiary: #2a2a28;
+  --text-primary: #f0efe8;
+  --text-secondary: #b4b2a9;
+  --text-tertiary: #888780;
+  --border: rgba(255,255,255,0.1);
+  --border-strong: rgba(255,255,255,0.18);
+  --accent-green: #5DCAA5;
+  --accent-green-bg: #085041;
+  --accent-green-border: #1D9E75;
+  --accent-purple: #AFA9EC;
+  --accent-purple-bg: #26215C;
+  --accent-purple-border: #7F77DD;
+  --accent-amber-bg: #412402;
+  --accent-amber-text: #FAC775;
+  --accent-amber-border: #BA7517;
+  --accent-gray-bg: #2C2C2A;
+  --accent-gray-text: #D3D1C7;
+  --accent-gray-border: #5F5E5A;
+  --linkedin-color: #6AABE3;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text-primary);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section { margin-bottom: 3rem; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 52px;
+  background: var(--bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.theme-toggle {
+  background: none;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero { padding: 3rem 0 1rem; }
+
+.hero-location {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.hero-bio {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-secondary);
+  transition: color 0.15s;
+}
+
+.social-links a:hover { color: var(--text-primary); }
+.social-links i { font-size: 15px; }
+
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.badge-green {
+  background: var(--accent-green-bg);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green-border);
+}
+
+.badge-gray {
+  background: var(--accent-gray-bg);
+  color: var(--accent-gray-text);
+  border: 1px solid var(--accent-gray-border);
+}
+
+.badge-purple {
+  background: var(--accent-purple-bg);
+  color: var(--accent-purple);
+  border: 1px solid var(--accent-purple-border);
+}
+
+.badge-amber {
+  background: var(--accent-amber-bg);
+  color: var(--accent-amber-text);
+  border: 1px solid var(--accent-amber-border);
+}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.stat {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stat.visible { opacity: 1; transform: translateY(0); }
+
+.stat-number {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: block;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+  display: block;
+}
+
+/* ============================================================
+   FILTER PILLS
+   ============================================================ */
+.filter-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+}
+
+.filter-pill {
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  background: transparent;
+  transition: all 0.15s;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  flex-shrink: 0;
+}
+
+.filter-pill:hover { color: var(--text-primary); }
+
+.filter-pill.active {
+  background: var(--text-primary);
+  color: var(--bg);
+  border-color: var(--text-primary);
+}
+
+/* ============================================================
+   CARD GRID & CARDS
+   ============================================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card.visible { opacity: 1; transform: translateY(0); }
+.card-accent-green { border-left: 2px solid var(--accent-green); }
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+}
+
+.card-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.tag {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.tag-default { background: var(--bg-tertiary); color: var(--text-secondary); }
+
+.tag-blue { background: #EEF2FF; color: #3730A3; }
+[data-theme="dark"] .tag-blue { background: #1e1b4b; color: #a5b4fc; }
+
+.tag-purple { background: var(--accent-purple-bg); color: var(--accent-purple); }
+.tag-amber  { background: var(--accent-amber-bg);  color: var(--accent-amber-text); }
+.tag-gray   { background: var(--accent-gray-bg);   color: var(--accent-gray-text); }
+
+.card-gh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+  transition: color 0.15s;
+}
+
+.card-gh-link:hover { color: var(--text-primary); }
+.card-gh-link i { font-size: 14px; }
+
+/* ============================================================
+   WAITLIST
+   ============================================================ */
+.waitlist-card {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-left: 2px solid var(--accent-green);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.waitlist-heading {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.waitlist-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.waitlist-count {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.waitlist-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.waitlist-input:focus { border-color: var(--accent-green); }
+.waitlist-input::placeholder { color: var(--text-tertiary); }
+
+.waitlist-btn {
+  width: 100%;
+  height: 40px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.waitlist-btn:hover:not(:disabled) {
+  background: var(--accent-green);
+  color: #fff;
+  border-color: var(--accent-green);
+}
+
+.waitlist-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.waitlist-success {
+  font-size: 14px;
+  color: var(--accent-green);
+  display: none;
+  padding: 4px 0;
+}
+
+.waitlist-error {
+  font-size: 13px;
+  color: #c0392b;
+  display: none;
+  padding: 4px 0;
+}
+
+[data-theme="dark"] .waitlist-error { color: #f1948a; }
+
+/* ============================================================
+   REVIEW / RECOMMENDATION CARDS
+   ============================================================ */
+.section-intro {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.review-card {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.review-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.review-username {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.review-stars {
+  font-size: 12px;
+  color: var(--accent-amber-text);
+  flex-shrink: 0;
+}
+
+.review-country {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+}
+
+.rec-role {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+}
+
+.rec-relationship {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+}
+
+.review-quote {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-style: italic;
+  margin-top: 10px;
+  flex: 1;
+}
+
+.review-source {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-align: right;
+  margin-top: 10px;
+}
+
+.review-source.linkedin { color: var(--linkedin-color); }
+
+.reviews-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 1rem;
+  transition: color 0.15s;
+}
+
+.reviews-more:hover { color: var(--text-primary); }
+
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.experience-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 0.5px solid var(--border);
+  padding: 0.75rem 0;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.experience-row.visible { opacity: 1; transform: translateY(0); }
+
+.exp-left { flex: 1; min-width: 0; }
+
+.exp-role {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.exp-company {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+}
+
+.exp-date {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* ============================================================
+   EDUCATION
+   ============================================================ */
+.edu-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.edu-left { flex: 1; min-width: 0; }
+
+.edu-degree {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.edu-school {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+  margin-bottom: 6px;
+}
+
+.edu-date {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0.75rem;
+}
+
+.footer-icons a {
+  color: var(--text-tertiary);
+  font-size: 18px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.footer-icons a:hover { color: var(--text-primary); }
+
+.footer-tagline {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  .hero { padding: 2rem 0 1rem; }
+  .hero h1 { font-size: 24px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-date, .edu-date { font-size: 11px; }
+}
+
+@media (max-width: 400px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Elia Yacoub</span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="ti ti-moon" id="themeIcon"></i>
+    </button>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <p class="hero-location">Cairo, Egypt &#x1F1EA;&#x1F1EC;</p>
+  <h1>Elia Yacoub</h1>
+  <p class="hero-subtitle">IT Support Engineer &middot; Builder &middot; B.Sc. Computer Science</p>
+  <p class="hero-bio">I solve hard problems at the intersection of enterprise IT support and software development. I build tools for underserved infrastructure &mdash; a multimodal Cairo transit app, local AI agents that run at zero cost, and Hackintosh systems that shouldn&rsquo;t work but do. 4+ years across SaaS support, BPO leadership, and freelance Android work across 40+ countries.</p>
+
+  <div class="social-links">
+    <a href="https://github.com/EliaAmir" target="_blank" rel="noopener noreferrer">
+      <i class="ti ti-brand-github"></i> EliaAmir
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <i class="ti ti-brand-linkedin"></i> LinkedIn
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <i class="ti ti-brand-youtube"></i> @EliaAmir
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <i class="ti ti-shopping-cart"></i> Fiverr
+    </a>
+  </div>
+
+  <div class="badges-row">
+    <span class="badge badge-green">Open to opportunities</span>
+    <span class="badge badge-gray">IELTS certified &middot; English advanced</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<section>
+  <div class="stats-grid">
+    <div class="stat">
+      <span class="stat-number">4+</span>
+      <span class="stat-label">years experience</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">96</span>
+      <span class="stat-label">Fiverr reviews &middot; 5.0 &#9733;</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">300+</span>
+      <span class="stat-label">Android devices modified</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">40+</span>
+      <span class="stat-label">countries served</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">6.1K</span>
+      <span class="stat-label">YouTube subscribers</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section id="projects">
+  <p class="section-label">PROJECTS</p>
+
+  <div class="filter-row" role="group" aria-label="Filter projects">
+    <button class="filter-pill active" data-filter="all">All</button>
+    <button class="filter-pill" data-filter="apps">Apps</button>
+    <button class="filter-pill" data-filter="ai-agents">AI agents</button>
+    <button class="filter-pill" data-filter="hackintosh">Hackintosh</button>
+    <button class="filter-pill" data-filter="tools">Tools</button>
+  </div>
+
+  <div class="card-grid" id="projectGrid">
+
+    <!-- Sekka -->
+    <div class="card card-accent-green" data-category="apps">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Sekka | &#x633;&#x643;&#x629;</div>
+          <div class="card-subtitle">Cairo multimodal transit app</div>
+        </div>
+        <span class="badge badge-green" style="flex-shrink:0;margin-top:1px">Grade A</span>
+      </div>
+      <p class="card-description">Trip planner across Cairo metro, buses &amp; microbuses. 672 routes &middot; 84 stations &middot; 17,274 graph edges &middot; Dijkstra &times;3.</p>
+      <div class="card-tags">
+        <span class="tag tag-blue">Flutter</span>
+        <span class="tag tag-blue">Dart</span>
+        <span class="tag tag-blue">Firebase</span>
+        <span class="tag tag-default">Dijkstra</span>
+      </div>
+      <a href="https://github.com/EliaAmir/sekka-cairo-transit" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>sekka-cairo-transit</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+    <!-- Jack -->
+    <div class="card" data-category="ai-agents">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Jack</div>
+          <div class="card-subtitle">Local autonomous AI agent</div>
+        </div>
+        <span class="badge badge-purple" style="flex-shrink:0;margin-top:1px">$0/mo</span>
+      </div>
+      <p class="card-description">OpenClaw + Gemma 4 E4B on dedicated Fedora. Full system access via Telegram. No cloud, no API cost.</p>
+      <div class="card-tags">
+        <span class="tag tag-purple">OpenClaw</span>
+        <span class="tag tag-purple">Fedora</span>
+        <span class="tag tag-default">RTX 4060</span>
+        <span class="tag tag-default">Telegram</span>
+      </div>
+      <a href="https://github.com/EliaAmir/jack-local-ai-agent" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>jack-local-ai-agent</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+    <!-- Zatona -->
+    <div class="card" data-category="ai-agents">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Zatona</div>
+          <div class="card-subtitle">Multi-agent AI system</div>
+        </div>
+        <span class="badge badge-purple" style="flex-shrink:0;margin-top:1px">$0/mo</span>
+      </div>
+      <p class="card-description">Hermes Agent &middot; Qwen3-Coder + 3 fallbacks via OpenRouter &middot; SearXNG local search. Research &amp; coding automation.</p>
+      <div class="card-tags">
+        <span class="tag tag-purple">Hermes Agent</span>
+        <span class="tag tag-purple">OpenRouter</span>
+        <span class="tag tag-default">SearXNG</span>
+        <span class="tag tag-default">Fedora</span>
+      </div>
+      <a href="https://github.com/EliaAmir/zatona-ai-agent-system" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>zatona-ai-agent-system</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+    <!-- Hackintosh EliteBook -->
+    <div class="card" data-category="hackintosh">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Hackintosh &middot; EliteBook x360</div>
+          <div class="card-subtitle">macOS Ventura &middot; HP EliteBook 1030 G3</div>
+        </div>
+        <span class="badge badge-gray" style="flex-shrink:0;margin-top:1px">Daily driver</span>
+      </div>
+      <p class="card-description">Custom EFI from scratch via Dortania. 120Hz &middot; touchscreen &middot; Thunderbolt &middot; iMessage all working. RTC BIOS errors resolved via custom ACPI patches.</p>
+      <div class="card-tags">
+        <span class="tag tag-gray">OpenCore</span>
+        <span class="tag tag-gray">Ventura</span>
+        <span class="tag tag-gray">ACPI</span>
+        <span class="tag tag-gray">Dortania</span>
+      </div>
+      <a href="https://github.com/EliaAmir/hackintosh-elitebook-x360-1030-g3" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>hackintosh-elitebook-x360-1030-g3</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+    <!-- Hackintosh Ryzen -->
+    <div class="card" data-category="hackintosh">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Hackintosh &middot; Ryzen + GTX 760</div>
+          <div class="card-subtitle">macOS Big Sur &middot; AMD Ryzen 3 1200</div>
+        </div>
+        <span class="badge badge-gray" style="flex-shrink:0;margin-top:1px">Working build</span>
+      </div>
+      <p class="card-description">AMD vanilla kernel patches + native Kepler GPU support. Big Sur is the ceiling for GTX 760 &mdash; documented for the community.</p>
+      <div class="card-tags">
+        <span class="tag tag-gray">OpenCore</span>
+        <span class="tag tag-gray">Big Sur</span>
+        <span class="tag tag-gray">AMD Ryzen</span>
+        <span class="tag tag-gray">GTX 760</span>
+      </div>
+      <a href="https://github.com/EliaAmir/hackintosh-ryzen-gtx760-bigsur" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>hackintosh-ryzen-gtx760-bigsur</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+    <!-- Hackintosh ay070ne -->
+    <div class="card" data-category="hackintosh">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Hackintosh &middot; HP ay070ne</div>
+          <div class="card-subtitle">macOS Catalina &middot; Intel i3 6th gen</div>
+        </div>
+        <span class="badge badge-gray" style="flex-shrink:0;margin-top:1px">Stable build</span>
+      </div>
+      <p class="card-description">Everything works except built-in WiFi &mdash; solved with USB adapter, plug and play. Skylake sweet spot on Catalina.</p>
+      <div class="card-tags">
+        <span class="tag tag-gray">OpenCore</span>
+        <span class="tag tag-gray">Catalina</span>
+        <span class="tag tag-gray">Skylake</span>
+        <span class="tag tag-gray">Intel HD 520</span>
+      </div>
+      <a href="https://github.com/EliaAmir/hackintosh-hp-ay070ne-catalina" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>hackintosh-hp-ay070ne-catalina</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+    <!-- ADB Toolkit -->
+    <div class="card" data-category="tools">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Android ADB Toolkit</div>
+          <div class="card-subtitle">Field-tested scripts &middot; 300+ projects</div>
+        </div>
+      </div>
+      <p class="card-description">ADB/Fastboot scripts from real Android modification work across 40+ countries. Custom ROMs, root, TWRP, bootloader.</p>
+      <div class="card-tags">
+        <span class="tag tag-amber">ADB</span>
+        <span class="tag tag-amber">Fastboot</span>
+        <span class="tag tag-amber">Magisk</span>
+        <span class="tag tag-amber">TWRP</span>
+      </div>
+      <a href="https://github.com/EliaAmir/android-adb-toolkit" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>android-adb-toolkit</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+    <!-- POS Field Notes -->
+    <div class="card" data-category="tools">
+      <div class="card-header">
+        <div>
+          <div class="card-title">POS Support Field Notes</div>
+          <div class="card-subtitle">L1 support knowledge base &middot; EMEA</div>
+        </div>
+      </div>
+      <p class="card-description">ESC/POS Arabic encoding, TCP/IP printer setup, SQL CE recovery. Real field notes from hospitality POS support.</p>
+      <div class="card-tags">
+        <span class="tag tag-default">ESC/POS</span>
+        <span class="tag tag-default">SQL CE</span>
+        <span class="tag tag-default">TCP/IP</span>
+        <span class="tag tag-default">Windows</span>
+      </div>
+      <a href="https://github.com/EliaAmir/pos-support-field-notes" target="_blank" rel="noopener noreferrer" class="card-gh-link">
+        <i class="ti ti-brand-github"></i>
+        <span>pos-support-field-notes</span>
+        <i class="ti ti-external-link"></i>
+      </a>
+    </div>
+
+  </div><!-- /projectGrid -->
+</section>
+
+<!-- ============================================================
+     WAITLIST
+     ============================================================ -->
+<section>
+  <p class="section-label">JOIN THE WAITLIST</p>
+  <div class="waitlist-card">
+    <div class="waitlist-heading">Sekka | &#x633;&#x643;&#x629; is coming to Cairo</div>
+    <div class="waitlist-sub">Get notified when the app launches. No spam.</div>
+    <div class="waitlist-count">1,434+ people already on the waitlist</div>
+    <form class="waitlist-form" id="waitlistForm" novalidate>
+      <input type="email" class="waitlist-input" id="waitlistEmail" placeholder="your@email.com" required autocomplete="email">
+      <button type="submit" class="waitlist-btn" id="waitlistBtn">Join waitlist &rarr;</button>
+      <div class="waitlist-success" id="waitlistSuccess">You&rsquo;re on the list! We&rsquo;ll reach out when Sekka launches.</div>
+      <div class="waitlist-error" id="waitlistError">Something went wrong &mdash; email us directly at <a href="mailto:eliaj320h@gmail.com" style="color:inherit;text-decoration:underline">eliaj320h@gmail.com</a></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     FIVERR REVIEWS
+     ============================================================ -->
+<section>
+  <p class="section-label">WHAT CLIENTS SAY</p>
+  <p class="section-intro">96 reviews &middot; 5.0 &#9733; &middot; 300+ Android devices &middot; 40+ countries</p>
+  <div class="card-grid">
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1FA;&#x1F1F8; ovidmusic</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">United States</div>
+      <p class="review-quote">&ldquo;I can&rsquo;t stress how professional and talented Elijah is. He is very patient and more than happy to answer all questions &mdash; even the no brainer ones. I can&rsquo;t thank him enough.&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1F3;&#x1F1F1; sctmoolen</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">Netherlands</div>
+      <p class="review-quote">&ldquo;Everything this dude did looked like sorcery to me. He even helped me to configure everything and was very nice and polite throughout. This guy is underrated and overall just amazing.&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1EE;&#x1F1F1; eylonk</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">Israel</div>
+      <p class="review-quote">&ldquo;Working with Elia was a fantastic experience! Their communication was top-notch, and they delivered exceptional work ahead of schedule. I highly recommend his services.&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1EE;&#x1F1F3; breathinglabs</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">India</div>
+      <p class="review-quote">&ldquo;This is the coolest guy on Fiverr, really skilled with android ROMs, and very kind, patient, and professional!&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1FA;&#x1F1F8; zealousbryce</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">United States</div>
+      <p class="review-quote">&ldquo;Elia was amazing. I have rooted my phone lots of times in the past and was having issues. Elia was able to find solutions to all the problems I was facing. Will absolutely use him again.&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1FA;&#x1F1F8; gabrielcasasjr</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">United States</div>
+      <p class="review-quote">&ldquo;Very responsive, knowledgeable, kind. Quick and easy steps guided by Elijah. Would recommend his service 1000%.&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1FA;&#x1F1F8; notlazy23</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">United States</div>
+      <p class="review-quote">&ldquo;Literally outstanding &mdash; did my root in amazing speed and guided me through thoroughly. 100% recommend.&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <span class="review-username">&#x1F1E8;&#x1F1E6; emreetdhillon</span>
+        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review-country">Canada</div>
+      <p class="review-quote">&ldquo;He was up all night just for me. Had good patience and skill. The previous guy was never able to get the point &mdash; he did. Honest, he&rsquo;s worth every dollar.&rdquo;</p>
+      <div class="review-source">Fiverr</div>
+    </div>
+
+  </div>
+  <a href="https://www.fiverr.com/eliaamir22" target="_blank" rel="noopener noreferrer" class="reviews-more">
+    View all 96 reviews <i class="ti ti-external-link" style="font-size:13px"></i>
+  </a>
+</section>
+
+<!-- ============================================================
+     LINKEDIN RECOMMENDATIONS
+     ============================================================ -->
+<section>
+  <p class="section-label">RECOMMENDATIONS</p>
+  <p class="section-intro">From colleagues and managers at Sutherland Egypt</p>
+  <div class="card-grid">
+
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-username">Eslam Ahmed</div>
+          <div class="rec-role">Operations Manager &middot; Sutherland</div>
+          <div class="rec-relationship">Senior to Elia</div>
+        </div>
+      </div>
+      <p class="review-quote">&ldquo;Elia is a rare breed of leader who pairs deep technical expertise with a visionary approach to operations. He is a true tech geek at heart. Whether it was troubleshooting a complex system issue or implementing a new strategy, his ability to stay ahead of the curve kept our team competitive and agile. He doesn&rsquo;t just manage, he builds.&rdquo;</p>
+      <div class="review-source linkedin">LinkedIn</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-username">Nada Elnoubi</div>
+          <div class="rec-role">Operations Manager &middot; Sutherland</div>
+          <div class="rec-relationship">Managed Elia directly</div>
+        </div>
+      </div>
+      <p class="review-quote">&ldquo;Elia consistently demonstrated strong leadership capabilities and a clear ability to drive performance improvements. He successfully transformed team performance through effective coaching and a strong results-oriented approach. I highly recommend him for any leadership or operations role.&rdquo;</p>
+      <div class="review-source linkedin">LinkedIn</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-username">Nayera Mohamed</div>
+          <div class="rec-role">Lead Customer Experience &middot; Sutherland</div>
+          <div class="rec-relationship">Senior to Elia</div>
+        </div>
+      </div>
+      <p class="review-quote">&ldquo;Elia is a strong leader who focuses on people just as much as projects. I was impressed by his ability to stay calm and strategic under pressure. He is a true leader who leads by example and with high integrity.&rdquo;</p>
+      <div class="review-source linkedin">LinkedIn</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-username">Ahmed Magdy</div>
+          <div class="rec-role">Director of Operations &middot; BPO</div>
+          <div class="rec-relationship">Senior to Elia</div>
+        </div>
+      </div>
+      <p class="review-quote">&ldquo;One of the most hardworking profiles I&rsquo;ve seen. Smart. Coachable. Dedicated.&rdquo;</p>
+      <div class="review-source linkedin">LinkedIn</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-username">Mohamed Mandor</div>
+          <div class="rec-role">Senior Talent Acquisition Specialist</div>
+          <div class="rec-relationship">Worked with Elia</div>
+        </div>
+      </div>
+      <p class="review-quote">&ldquo;Elia was my go-to support when I was an agent, and he always came through. He&rsquo;s a genuine leader who makes the people around him better. Highly recommend!&rdquo;</p>
+      <div class="review-source linkedin">LinkedIn</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+     ============================================================ -->
+<section>
+  <p class="section-label">EXPERIENCE</p>
+
+  <div class="experience-row">
+    <div class="exp-left">
+      <div class="exp-role">IT Support Engineer</div>
+      <div class="exp-company">Syrve MENA &middot; Remote &mdash; Dubai, UAE</div>
+    </div>
+    <div class="exp-date">Apr 2026 &ndash; present</div>
+  </div>
+
+  <div class="experience-row">
+    <div class="exp-left">
+      <div class="exp-role">Team Leader, Service Delivery</div>
+      <div class="exp-company">Sutherland Egypt &middot; Cairo</div>
+    </div>
+    <div class="exp-date">Aug 2025 &ndash; Apr 2026</div>
+  </div>
+
+  <div class="experience-row">
+    <div class="exp-left">
+      <div class="exp-role">Technical Training Facilitator</div>
+      <div class="exp-company">Sutherland Egypt &middot; Cairo</div>
+    </div>
+    <div class="exp-date">Apr 2025 &ndash; Aug 2025</div>
+  </div>
+
+  <div class="experience-row">
+    <div class="exp-left">
+      <div class="exp-role">Escalation Desk &amp; Floor Support (SME)</div>
+      <div class="exp-company">Sutherland Egypt &middot; Cairo</div>
+    </div>
+    <div class="exp-date">May 2024 &ndash; Apr 2025</div>
+  </div>
+
+  <div class="experience-row">
+    <div class="exp-left">
+      <div class="exp-role">Android Customization Specialist</div>
+      <div class="exp-company">Fiverr (freelance) &middot; 40+ countries</div>
+    </div>
+    <div class="exp-date">Jul 2021 &ndash; present</div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     EDUCATION
+     ============================================================ -->
+<section>
+  <p class="section-label">EDUCATION</p>
+  <div class="edu-row">
+    <div class="edu-left">
+      <div class="edu-degree">B.Sc. Computer Science</div>
+      <div class="edu-school">Arab Open University &middot; UK-accredited via The Open University</div>
+      <span class="badge badge-green" style="font-size:11px">Graduation project: Sekka | &#x633;&#x643;&#x629; &middot; Grade A</span>
+    </div>
+    <div class="edu-date">Sep 2022 &ndash; Jun 2026</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer-icons">
+    <a href="https://github.com/EliaAmir" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <i class="ti ti-brand-github"></i>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="ti ti-brand-linkedin"></i>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <i class="ti ti-brand-youtube"></i>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Fiverr">
+      <i class="ti ti-shopping-cart"></i>
+    </a>
+  </div>
+  <p class="footer-tagline">&ldquo;I build things that should exist but don&rsquo;t.&rdquo;</p>
+</footer>
+
+</div><!-- /container -->
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── THEME TOGGLE ─────────────────────────────────────── */
+  var html = document.documentElement;
+  var toggleBtn = document.getElementById('themeToggle');
+  var themeIcon = document.getElementById('themeIcon');
+
+  function syncIcon() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    themeIcon.className = isDark ? 'ti ti-sun' : 'ti ti-moon';
+  }
+
+  syncIcon();
+
+  toggleBtn.addEventListener('click', function () {
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    syncIcon();
+  });
+
+  /* ── PROJECT FILTER ───────────────────────────────────── */
+  var pills = document.querySelectorAll('.filter-pill');
+  var projectCards = document.querySelectorAll('#projectGrid .card');
+
+  function filterCards(category) {
+    projectCards.forEach(function (card) {
+      var match = category === 'all' || card.getAttribute('data-category') === category;
+      card.style.display = match ? '' : 'none';
+    });
+    scheduleObservation();
+  }
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      pills.forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      filterCards(pill.getAttribute('data-filter'));
+    });
+  });
+
+  /* ── SCROLL ANIMATIONS ────────────────────────────────── */
+  function setStaggerDelays(parentSelector) {
+    var parent = document.querySelector(parentSelector);
+    if (!parent) return;
+    Array.from(parent.children).forEach(function (child, i) {
+      child.style.transitionDelay = (i * 80) + 'ms';
+    });
+  }
+
+  setStaggerDelays('.stats-grid');
+  setStaggerDelays('#projectGrid');
+
+  document.querySelectorAll('.experience-row').forEach(function (el, i) {
+    el.style.transitionDelay = (i * 80) + 'ms';
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  function scheduleObservation() {
+    requestAnimationFrame(function () {
+      document.querySelectorAll('.card, .experience-row, .stat').forEach(function (el) {
+        if (el.style.display !== 'none' && !el.classList.contains('visible')) {
+          io.observe(el);
+        }
+      });
+    });
+  }
+
+  scheduleObservation();
+
+  /* ── WAITLIST FORM ────────────────────────────────────── */
+  var form    = document.getElementById('waitlistForm');
+  var emailIn = document.getElementById('waitlistEmail');
+  var btn     = document.getElementById('waitlistBtn');
+  var success = document.getElementById('waitlistSuccess');
+  var errMsg  = document.getElementById('waitlistError');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!emailIn.value || !emailIn.validity.valid) return;
+
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    errMsg.style.display = 'none';
+
+    fetch('https://formspree.io/f/PLACEHOLDER', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: emailIn.value })
+    })
+    .then(function (res) {
+      if (!res.ok) throw new Error('not ok');
+      form.innerHTML = '';
+      success.style.cssText = 'display:block;opacity:0;transition:opacity 0.35s ease';
+      form.appendChild(success);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { success.style.opacity = '1'; });
+      });
+    })
+    .catch(function () {
+      btn.textContent = 'Join waitlist →';
+      btn.disabled = false;
+      errMsg.style.display = 'block';
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
