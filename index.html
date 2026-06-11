@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elia Yacoub · IT Support Engineer & Builder</title>
-<meta name="description" content="Elia Yacoub. IT Support Engineer with 4+ years across SaaS support, BPO leadership, and international freelance. Four sides: Freelance, Support & Leadership, Engineering, Content.">
+<title>Elia Yacoub · AI Developer & Builder</title>
+<meta name="description" content="Elia Yacoub — AI Developer based in Cairo. Building local LLM agents (Jack, Zatona), multimodal transit AI (Sekka), and low-level systems. Open to Senior AI Developer roles.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,10 +91,20 @@
   .hp-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
   .hp-v{font-size:1.02rem;color:var(--text)}
   .hp-v em{font-family:'Fraunces',serif;font-style:italic;color:var(--accent)}
-  .hp-btn{font-family:'JetBrains Mono',monospace;font-size:12.5px;text-decoration:none;text-align:center;padding:13px;border-radius:4px;background:var(--accent);color:#161419;font-weight:600;transition:filter .3s,transform .3s var(--ease)}
+  .hp-btn{font-family:'JetBrains Mono',monospace;font-size:12.5px;text-decoration:none;text-align:center;padding:13px;border-radius:4px;background:var(--accent);color:#161419;font-weight:600;transition:filter .3s,transform .3s var(--ease);border:none;cursor:pointer;width:100%;display:block}
   .hp-btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
 
-  /* ---------- four cards ---------- */
+  /* ---------- home sections ---------- */
+  .home-sec{padding:60px 0;border-top:1px solid var(--border)}
+  .home-label{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
+  .home-sub{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint);margin-bottom:28px;margin-top:-10px}
+
+  /* ---------- three-column card grid ---------- */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:960px){.grid3{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid3{grid-template-columns:1fr}}
+
+  /* ---------- four nav cards (sides) ---------- */
   .sides{padding:38px 0 96px}
   .sides-label{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
   .card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -118,7 +128,7 @@
   .sc-stat{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--c);letter-spacing:.02em;margin-bottom:18px}
   .sc-go{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text);display:flex;align-items:center;gap:8px;transition:gap .3s var(--ease)}
   .side-card:hover .sc-go{gap:15px}
-  .c-green{--c:#22c97d}.c-blue{--c:#5b97ff}.c-amber{--c:#e8b15f}.c-red{--c:#ff5d5d}
+  .c-green{--c:#22c97d}.c-blue{--c:#5b97ff}.c-amber{--c:#e8b15f}.c-red{--c:#ff5d5d}.c-silver{--c:#b4b2a9}
 
   /* ---------- detail views ---------- */
   .detail-top{padding:118px 0 0}
@@ -202,7 +212,7 @@
   .rev-stars{color:var(--accent);font-size:12px;font-family:'JetBrains Mono',monospace;white-space:nowrap}
   .rev-text{color:var(--dim);font-size:.97rem;line-height:1.6}
   .rev-repeat{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-soft);background:var(--accent-soft);padding:3px 7px;border-radius:3px;margin-top:11px}
-  a.rev-link{text-decoration:none;color:inherit;display:block}
+  a.rev-link{text-decoration:none;color:inherit;display:block;cursor:pointer}
   a.rev-link:hover .rev{border-color:var(--accent)}
 
   .rec{break-inside:avoid;margin-bottom:18px;border:1px solid var(--border);border-radius:9px;padding:24px;background:var(--surface);box-shadow:var(--lit);transition:border-color .35s var(--ease),transform .35s var(--ease)}
@@ -214,7 +224,7 @@
   .rec-name{font-weight:600;color:var(--text);font-size:.95rem}
   .rec-title{color:var(--dim);font-size:.86rem;line-height:1.45;margin-top:3px}
   .rec-rel{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);margin-top:6px;letter-spacing:.02em}
-  a.rec-link{text-decoration:none;color:inherit;display:block}
+  a.rec-link{text-decoration:none;color:inherit;display:block;cursor:pointer}
   a.rec-link:hover .rec{border-color:var(--accent)}
 
   .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
@@ -225,7 +235,7 @@
   .chip{font-size:.9rem;color:var(--dim);background:var(--bg);border:1px solid var(--border);padding:7px 12px;border-radius:3px;transition:color .25s,border-color .25s}
   .chip:hover{color:var(--text);border-color:var(--border-2)}
 
-  .contact{text-align:center;padding:86px 0 104px;border-top:1px solid var(--border)}
+  .contact{text-align:center;padding:86px 0 60px;border-top:1px solid var(--border)}
   .contact h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.02em;line-height:1.06;margin-bottom:18px}
   .contact h2 em{font-style:italic;color:var(--accent);font-weight:400}
   .contact p{color:var(--dim);max-width:46ch;margin:0 auto 32px;font-size:1.1rem}
@@ -237,7 +247,46 @@
   .foot-inner a{color:var(--dim);text-decoration:none}
   .foot-inner a:hover{color:var(--accent)}
 
-  /* waitlist form */
+  /* ---------- sekka waitlist panel (home) ---------- */
+  .wl-panel{border:1px solid var(--border);border-radius:10px;background:var(--surface);box-shadow:var(--shadow),var(--lit);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  @media(max-width:768px){.wl-panel{grid-template-columns:1fr;padding:28px 24px;gap:28px}}
+  .wl-title{font-family:'Fraunces',serif;font-weight:500;font-size:1.75rem;letter-spacing:-.02em;line-height:1.08;margin-bottom:10px}
+  .wl-subtitle{color:var(--dim);font-size:1rem;line-height:1.6;margin-bottom:16px}
+  .wl-count{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);margin-bottom:8px}
+  .wl-fine{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint)}
+  .wl-form{display:flex;flex-direction:column;gap:10px}
+  .wl-input{padding:13px 16px;background:var(--surface-2);border:1px solid var(--border-2);border-radius:4px;color:var(--text);font-size:14px;font-family:'Hanken Grotesk',sans-serif;transition:border-color .3s}
+  .wl-input:focus{outline:none;border-color:var(--accent)}
+  .wl-submit{padding:13px;background:var(--accent);color:#161419;border:none;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;cursor:pointer;text-align:center;transition:filter .3s,transform .3s var(--ease)}
+  .wl-submit:hover{filter:brightness(1.08);transform:translateY(-2px)}
+  .wl-msg{font-family:'JetBrains Mono',monospace;font-size:13px;display:none;margin-top:4px}
+  .wl-msg.success{color:var(--accent)}
+  .wl-msg.error{color:#ff5d5d}
+
+  /* ---------- experience (home) ---------- */
+  .exp-step{padding:28px 0;border-top:1px solid var(--border);display:flex;gap:28px;justify-content:space-between}
+  @media(max-width:680px){.exp-step{flex-direction:column;gap:8px}}
+  .exp-main{flex:1}
+  .exp-role{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:500;margin-bottom:2px}
+  .exp-company{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:10px}
+  .exp-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);white-space:nowrap;padding-top:4px}
+  .exp-body{color:var(--dim);font-size:.99rem;line-height:1.62;max-width:66ch}
+
+  /* inline award badges */
+  .award-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+  .award-badge{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.03em;color:var(--accent);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);padding:8px 14px;border-radius:4px}
+
+  /* education */
+  .edu-row{margin-top:32px;padding:24px;border:1px solid var(--border);border-radius:9px;background:var(--surface);box-shadow:var(--lit)}
+  .edu-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;margin-bottom:4px}
+  .edu-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);margin-bottom:12px}
+  .edu-badge{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);padding:5px 11px;border-radius:3px;display:inline-block}
+
+  /* see-all link */
+  .see-all{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--dim);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-top:24px;transition:color .25s,gap .25s var(--ease)}
+  .see-all:hover{color:var(--accent);gap:14px}
+
+  /* engineering waitlist (inline in feature card) */
   .waitlist-form{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
   .waitlist-form input{flex:1;min-width:200px;padding:10px 14px;background:var(--surface-2);border:1px solid var(--border-2);border-radius:4px;color:var(--text);font-size:14px;font-family:'Hanken Grotesk',sans-serif}
   .waitlist-form input:focus{outline:none;border-color:var(--accent)}
@@ -262,22 +311,26 @@
 
 <!-- ===================== HOME ===================== -->
 <div class="view active" data-view="home" data-theme="theme-amber">
+
+  <!-- HERO -->
   <header>
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <div class="kicker reveal">IT Support Engineer · Builder · Cairo</div>
+          <div class="kicker reveal">AI Developer · Systems Builder · Cairo, Egypt</div>
           <h1 class="reveal">Elia Yacoub</h1>
           <p class="bio reveal">
-            <strong>4+ years</strong> across enterprise SaaS support, BPO team leadership, and
-            international freelance. I pair hands-on troubleshooting in networking, OS-level
-            debugging, and hardware with a builder's habit of shipping things, and a record of
-            process improvement across <strong>40+ countries</strong>.
+            I build AI systems that run at zero cloud cost — local LLM agents with full system access,
+            multi-model pipelines with intelligent routing, and multimodal transit routing on a custom
+            graph of 17,274 edges. When I'm not writing code I'm taking apart operating systems: three
+            working Hackintosh builds prove I understand what happens below the kernel.
+            <strong>4+ years</strong> of enterprise support gives everything I ship production-grade reliability.
           </p>
         </div>
         <div class="hero-panel reveal">
-          <div class="hp-row"><span class="hp-k">Education</span><span class="hp-v">B.Sc. Computer Science <em>2026</em></span></div>
-          <div class="hp-row"><span class="hp-k">Languages</span><span class="hp-v">Arabic · English (IELTS)</span></div>
+          <div class="hp-row"><span class="hp-k">Current role</span><span class="hp-v">AI Developer · IT Support Engineer, Syrve MENA</span></div>
+          <div class="hp-row"><span class="hp-k">Currently building</span><span class="hp-v">Jack · Zatona · Sekka <em>| سكة</em></span></div>
+          <div class="hp-row"><span class="hp-k">Stack</span><span class="hp-v">Python · Flutter · Local LLMs · OpenCore · Linux</span></div>
           <div class="hp-row"><span class="hp-k">Based in</span><span class="hp-v">Cairo · available remotely</span></div>
           <div class="hp-row"><span class="hp-k">Reach</span><span class="hp-v">Clients in <em>40+ countries</em></span></div>
           <a href="mailto:eliaj320h@gmail.com" class="hp-btn">Get in touch →</a>
@@ -286,9 +339,227 @@
     </div>
   </header>
 
+  <!-- AI SYSTEMS -->
+  <section class="home-sec">
+    <div class="wrap">
+      <div class="home-label reveal">AI SYSTEMS</div>
+      <div class="grid3 reveal">
+
+        <a href="https://github.com/EliaAmir/jack-local-ai-agent" target="_blank" rel="noopener" class="side-card c-green">
+          <div class="sc-num">LOCAL AGENT · FEDORA · 2025</div>
+          <div class="sc-title">Jack</div>
+          <div class="sc-desc">A fully autonomous AI agent with zero cloud dependency. OpenClaw framework + Gemma 4 E4B on RTX 4060 — full file system, email, and code execution access via Telegram. Plans multi-step tasks, executes them, reports back.</div>
+          <div class="tags" style="margin-top:0;margin-bottom:14px">
+            <span class="tag">OpenClaw</span><span class="tag">Gemma 4 E4B</span><span class="tag">Fedora</span><span class="tag">RTX 4060</span><span class="tag">Telegram</span>
+          </div>
+          <div class="sc-stat">100% local · $0/mo</div>
+        </a>
+
+        <a href="https://github.com/EliaAmir/zatona-ai-agent-system" target="_blank" rel="noopener" class="side-card c-blue">
+          <div class="sc-num">MULTI-AGENT PIPELINE · 2025</div>
+          <div class="sc-title">Zatona</div>
+          <div class="sc-desc">Hermes Agent framework with 4-model fallback chain: Qwen3-Coder → Gemma 4 31B → Nemotron 3 Super 120B → GLM 4.5 Air. Smart router sends short requests to lightweight model, preserving quota. SearXNG provides unlimited local web search at $0.</div>
+          <div class="tags" style="margin-top:0;margin-bottom:14px">
+            <span class="tag">Hermes Agent</span><span class="tag">Qwen3-Coder</span><span class="tag">OpenRouter</span><span class="tag">SearXNG</span><span class="tag">Fedora</span>
+          </div>
+          <div class="sc-stat">4-model chain · intelligent routing</div>
+        </a>
+
+        <a href="https://github.com/EliaAmir/sekka-cairo-transit" target="_blank" rel="noopener" class="side-card c-amber">
+          <div class="sc-num">MULTIMODAL ROUTING · A GRADE · 2025</div>
+          <div class="sc-title">Sekka | سكة</div>
+          <div class="sc-desc">Cairo's missing transit app. 851-node, 17,274-edge multimodal graph across metro, bus, and microbus. Dijkstra ×3 with distinct cost functions. 85.5% geocoding across 12,994 stops. 1,495 metro transfer links across 509 routes.</div>
+          <div class="tags" style="margin-top:0;margin-bottom:14px">
+            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Dijkstra</span><span class="tag">Firebase</span><span class="tag">Graph</span><span class="tag">7.7MB</span>
+          </div>
+          <div class="sc-stat">851 nodes · 17,274 edges · 672 routes</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKKA WAITLIST -->
+  <section class="home-sec">
+    <div class="wrap">
+      <div class="home-label reveal">JOIN THE WAITLIST</div>
+      <div class="wl-panel reveal">
+        <div>
+          <div class="wl-title">Sekka | سكة is coming to Cairo</div>
+          <div class="wl-subtitle">The transit app Cairo has always needed. Metro, buses, microbuses — one app, three routing modes.</div>
+          <div class="wl-count">★&nbsp;&nbsp;2,000+ people already waiting</div>
+          <div class="wl-fine">Free forever for early waitlist members.</div>
+        </div>
+        <div>
+          <form class="wl-form" id="wl-form">
+            <input class="wl-input" type="email" placeholder="your@email.com" required id="wl-email">
+            <button type="submit" class="wl-submit">Join 2,000+ waitlist →</button>
+            <div class="wl-msg success" id="wl-ok">You're on the list! We'll reach out when Sekka launches.</div>
+            <div class="wl-msg error" id="wl-err">Something went wrong — email eliaj320h@gmail.com</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEMS & INFRASTRUCTURE -->
+  <section class="home-sec">
+    <div class="wrap">
+      <div class="home-label reveal">SYSTEMS &amp; INFRASTRUCTURE</div>
+      <div class="grid3 reveal">
+
+        <a href="https://github.com/EliaAmir/hackintosh-elitebook-x360-1030-g3" target="_blank" rel="noopener" class="side-card c-silver">
+          <div class="sc-num">HACKINTOSH · DAILY DRIVER · 2024</div>
+          <div class="sc-title">macOS Ventura · EliteBook x360</div>
+          <div class="sc-desc">Custom EFI from scratch via Dortania. Resolved RTC BIOS errors and hardware incompatibilities through ACPI patches. 120Hz, touchscreen, Thunderbolt, iMessage all working. Built by reading kernel logs, not following guides.</div>
+          <div class="tags" style="margin-top:0;margin-bottom:14px">
+            <span class="tag">OpenCore</span><span class="tag">Ventura</span><span class="tag">ACPI</span><span class="tag">Dortania</span><span class="tag">EFI</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/EliaAmir/hackintosh-ryzen-gtx760-bigsur" target="_blank" rel="noopener" class="side-card c-silver">
+          <div class="sc-num">HACKINTOSH · AMD · 2024</div>
+          <div class="sc-title">macOS Big Sur · Ryzen + GTX 760</div>
+          <div class="sc-desc">AMD vanilla kernel patches + native Kepler GPU support. Big Sur is the ceiling for GTX 760 — fully documented for the Hackintosh community.</div>
+          <div class="tags" style="margin-top:0;margin-bottom:14px">
+            <span class="tag">OpenCore</span><span class="tag">Big Sur</span><span class="tag">AMD Ryzen</span><span class="tag">GTX 760</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/EliaAmir/android-adb-toolkit" target="_blank" rel="noopener" class="side-card c-amber">
+          <div class="sc-num">TOOLING · 300+ PROJECTS</div>
+          <div class="sc-title">Android ADB Toolkit</div>
+          <div class="sc-desc">Field-tested ADB/Fastboot scripts from 300+ real Android system modification projects across 40+ countries.</div>
+          <div class="tags" style="margin-top:0;margin-bottom:14px">
+            <span class="tag">ADB</span><span class="tag">Fastboot</span><span class="tag">Magisk</span><span class="tag">TWRP</span><span class="tag">Shell</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="home-sec">
+    <div class="wrap">
+      <div class="home-label reveal">EXPERIENCE</div>
+
+      <div class="reveal">
+        <div class="exp-step">
+          <div class="exp-main">
+            <div class="exp-role">IT Support Engineer</div>
+            <div class="exp-company">Syrve MENA · Remote, Dubai UAE</div>
+            <div class="exp-body">Remote technical support across EMEA: configuring Syrve POS on Windows and macOS for hospitality clients, troubleshooting hardware, software, and network issues, customizing client invoices through script editing, managing tickets and remote-access sessions across a globally distributed team.</div>
+            <div class="tags" style="margin-top:12px">
+              <span class="tag">Syrve</span><span class="tag">POS</span><span class="tag">EMEA</span><span class="tag">ESC/POS</span><span class="tag">TCP/IP</span><span class="tag">Windows</span><span class="tag">macOS</span>
+            </div>
+          </div>
+          <div class="exp-date">Apr 2026 – Present</div>
+        </div>
+
+        <div class="exp-step">
+          <div class="exp-main">
+            <div class="exp-role">Team Leader, Service Delivery</div>
+            <div class="exp-company">Sutherland Egypt · Cairo</div>
+            <div class="exp-body">Led technical-support teams of 8–16, owning schedules, KPIs, and performance coaching. Held the lowest repeated-call rate in the department for 5 consecutive months. Root-cause analysis to identify failure patterns and implement corrective workflows.</div>
+            <div class="tags" style="margin-top:12px">
+              <span class="tag">Team Leadership</span><span class="tag">KPIs</span><span class="tag">Coaching</span><span class="tag">BPO</span>
+            </div>
+          </div>
+          <div class="exp-date">Aug 2025 – Apr 2026</div>
+        </div>
+
+        <div class="exp-step">
+          <div class="exp-main">
+            <div class="exp-role">Technical Training Facilitator</div>
+            <div class="exp-company">Sutherland Egypt · Cairo</div>
+            <div class="exp-body">Delivered technical trainings on product troubleshooting, CRM systems, and escalation procedures. Upskilled 12 underperforming agents to 120% performance attainment.</div>
+            <div class="tags" style="margin-top:12px">
+              <span class="tag">Training</span><span class="tag">CRM</span><span class="tag">Escalations</span>
+            </div>
+          </div>
+          <div class="exp-date">Apr 2025 – Aug 2025</div>
+        </div>
+
+        <div class="exp-step">
+          <div class="exp-main">
+            <div class="exp-role">Escalation Desk &amp; Floor Support (SME)</div>
+            <div class="exp-company">Sutherland Egypt · Cairo</div>
+            <div class="exp-body">Selected to launch new line of business. Real-time support to 80+ agents. Identified and implemented 39+ process improvements to reduce repeated calls and AHT. Managed high-priority escalation calls for US Broadband &amp; Wireless accounts.</div>
+            <div class="tags" style="margin-top:12px">
+              <span class="tag">SME</span><span class="tag">Escalations</span><span class="tag">Process Improvement</span><span class="tag">BPO</span>
+            </div>
+          </div>
+          <div class="exp-date">May 2024 – Apr 2025</div>
+        </div>
+
+        <div class="exp-step">
+          <div class="exp-main">
+            <div class="exp-role">Android Customization Specialist</div>
+            <div class="exp-company">Fiverr (freelance) · 40+ countries</div>
+            <div class="exp-body">300+ Android system-level modification projects including custom ROMs, Magisk root installations, bootloader unlocking, and device recovery. 96 reviews, 5.0 stars, 40+ countries.</div>
+            <div class="tags" style="margin-top:12px">
+              <span class="tag">Android</span><span class="tag">ADB</span><span class="tag">Magisk</span><span class="tag">Custom ROM</span><span class="tag">TWRP</span><span class="tag">Fiverr</span>
+            </div>
+          </div>
+          <div class="exp-date">Jul 2021 – Present</div>
+        </div>
+
+        <div class="award-row">
+          <span class="award-badge">★ Top SME · Floor Support Excellence · Jan 2025</span>
+          <span class="award-badge">★ Top Sales Performance · Fiber Migration · Oct 2024</span>
+          <span class="award-badge">★ Lowest Escalation Recurrence · Broadband · Aug 2024</span>
+          <span class="award-badge">★ 1st Top Performer · Wireless Technical Support · Feb 2024</span>
+        </div>
+
+        <div class="edu-row">
+          <div class="edu-title">B.Sc. Computer Science · Arab Open University</div>
+          <div class="edu-date">UK-accredited via The Open University · Sep 2022 – Jun 2026</div>
+          <span class="edu-badge">Graduation project: Sekka | سكة · Grade A</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIVERR REVIEWS -->
+  <section class="home-sec">
+    <div class="wrap">
+      <div class="home-label reveal">WHAT CLIENTS SAY</div>
+      <div class="home-sub reveal">96 reviews · 5.0 ★ · 300+ Android devices · 40+ countries</div>
+      <div class="wall reveal" id="fiverr-wall-home"></div>
+      <a href="https://www.fiverr.com/eliaamir22" target="_blank" rel="noopener" class="see-all reveal">View all 96 reviews →</a>
+    </div>
+  </section>
+
+  <!-- LINKEDIN RECOMMENDATIONS -->
+  <section class="home-sec">
+    <div class="wrap">
+      <div class="home-label reveal">WHAT COLLEAGUES SAY</div>
+      <div class="home-sub reveal">10 LinkedIn recommendations · Sutherland Egypt</div>
+      <div class="wall reveal" id="rec-wall-home"></div>
+      <a href="https://www.linkedin.com/in/eliayacoub" target="_blank" rel="noopener" class="see-all reveal">View all 10 recommendations →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="wrap">
+      <h2 class="reveal">Let's build<br>something <em>good.</em></h2>
+      <p class="reveal">Open to Senior AI Developer roles, engineering, and freelance work.</p>
+      <div class="social-row reveal">
+        <a href="mailto:eliaj320h@gmail.com" class="btn btn-primary">eliaj320h@gmail.com</a>
+        <a href="https://www.fiverr.com/users/eliaamir22/" class="btn btn-ghost">Fiverr</a>
+        <a href="https://www.linkedin.com/in/eliayacoub" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/EliaAmir" class="btn btn-ghost">GitHub</a>
+        <a href="https://www.youtube.com/@EliaAmir" class="btn btn-ghost">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE IN DEPTH (moved to bottom) -->
   <section class="sides">
     <div class="wrap">
-      <div class="sides-label reveal">Four sides. Tap any to dive in.</div>
+      <div class="sides-label reveal">EXPLORE IN DEPTH</div>
       <div class="card-grid">
         <a href="#freelance" class="side-card c-green reveal">
           <div class="sc-num">01</div>
@@ -322,20 +593,7 @@
     </div>
   </section>
 
-  <section class="contact">
-    <div class="wrap">
-      <h2 class="reveal">Let's build<br>something <em>good.</em></h2>
-      <p class="reveal">Open to engineering, technical support, and freelance work, and always happy to talk shop.</p>
-      <div class="social-row reveal">
-        <a href="mailto:eliaj320h@gmail.com" class="btn btn-primary">eliaj320h@gmail.com</a>
-        <a href="https://www.fiverr.com/users/eliaamir22/" class="btn btn-ghost">Fiverr</a>
-        <a href="https://www.linkedin.com/in/eliayacoub" class="btn btn-ghost">LinkedIn</a>
-        <a href="https://github.com/EliaAmir" class="btn btn-ghost">GitHub</a>
-        <a href="https://www.youtube.com/@EliaAmir" class="btn btn-ghost">YouTube</a>
-      </div>
-    </div>
-  </section>
-</div>
+</div><!-- end #home -->
 
 <!-- ===================== FREELANCE ===================== -->
 <div class="view" data-view="freelance" data-theme="theme-green">
@@ -350,7 +608,7 @@
     <div class="block reveal">
       <div class="stat-row">
         <div class="stat-box"><div class="n">96</div><div class="l">Reviews · 5.0 ★</div></div>
-        <div class="stat-box"><div class="n">300+</div><div class="l">Devices helped</div></div>
+        <div class="stat-box"><div class="n">300+</div><div class="l">Devices modified</div></div>
         <div class="stat-box"><div class="n">40+</div><div class="l">Countries served</div></div>
         <div class="stat-box"><div class="n">L2</div><div class="l">Fiverr seller level</div></div>
       </div>
@@ -473,7 +731,7 @@
         </div>
       </div>
 
-      <!-- Sekka — new card with waitlist -->
+      <!-- Sekka -->
       <div class="feature" style="cursor:pointer" onclick="window.open('https://github.com/EliaAmir/sekka-cairo-transit','_blank')">
         <div class="feature-inner">
           <div class="feature-tag">In Development · Cairo Transit · 2025</div>
@@ -484,10 +742,10 @@
             <span class="tag">Bilingual AR/EN</span><span class="tag">Transit</span>
           </div>
           <a href="https://github.com/EliaAmir/sekka-cairo-transit" class="btn btn-ghost" target="_blank" rel="noopener" onclick="event.stopPropagation()">View on GitHub →</a>
-          <form class="waitlist-form" id="wl-form" onclick="event.stopPropagation()">
-            <input type="email" placeholder="your@email.com" required id="wl-email">
+          <form class="waitlist-form" id="wl-form-eng" onclick="event.stopPropagation()">
+            <input type="email" placeholder="your@email.com" required id="wl-email-eng">
             <button type="submit">Join waitlist →</button>
-            <p class="wl-success" id="wl-msg" style="display:none">
+            <p class="wl-success" id="wl-msg-eng" style="display:none">
               You're on the list! We'll reach out when Sekka launches.
             </p>
           </form>
@@ -656,8 +914,9 @@
     const full=Math.floor(r);
     return "★".repeat(full)+(r%1>=0.5?"½":"")+"  "+r.toFixed(1);
   }
-  function renderFiverr(){
-    const el=document.getElementById('fiverr-wall'); if(!el||el.children.length) return;
+
+  function renderFiverr(targetId){
+    const el=document.getElementById(targetId); if(!el||el.children.length) return;
     el.innerHTML=fiverrReviews.map(v=>`
       <a href="https://www.fiverr.com/eliaamir22" target="_blank" rel="noopener" class="rev-link">
         <div class="rev">
@@ -670,8 +929,9 @@
         </div>
       </a>`).join('');
   }
-  function renderRecs(){
-    const el=document.getElementById('rec-wall'); if(!el||el.children.length) return;
+
+  function renderRecs(targetId){
+    const el=document.getElementById(targetId); if(!el||el.children.length) return;
     el.innerHTML=recs.map(r=>`
       <a href="https://www.linkedin.com/in/eliayacoub" target="_blank" rel="noopener" class="rec-link">
         <div class="rec">
@@ -700,8 +960,9 @@
     const view=views[h];
     view.classList.add('active');
     document.body.className=view.dataset.theme;
-    if(h==='freelance') renderFiverr();
-    if(h==='support')   renderRecs();
+    if(h==='home')     { renderFiverr('fiverr-wall-home'); renderRecs('rec-wall-home'); }
+    if(h==='freelance') renderFiverr('fiverr-wall');
+    if(h==='support')   renderRecs('rec-wall');
     window.scrollTo(0,0);
     animate(view);
   }
@@ -710,16 +971,40 @@
   addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
   document.getElementById('yr').textContent=new Date().getFullYear();
 
+  /* Home page Sekka waitlist */
   document.getElementById('wl-form')?.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = e.target.querySelector('button');
-    const msg = document.getElementById('wl-msg');
+    const ok  = document.getElementById('wl-ok');
+    const err = document.getElementById('wl-err');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    try {
+      const r = await fetch('https://formspree.io/f/PLACEHOLDER', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:document.getElementById('wl-email').value})
+      });
+      if(!r.ok) throw new Error();
+      e.target.style.display = 'none';
+      ok.style.display = 'block';
+    } catch {
+      btn.textContent = 'Join 2,000+ waitlist →';
+      btn.disabled = false;
+      err.style.display = 'block';
+    }
+  });
+
+  /* Engineering view Sekka waitlist */
+  document.getElementById('wl-form-eng')?.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    const msg = document.getElementById('wl-msg-eng');
     btn.textContent = 'Sending...'; btn.disabled = true;
     try {
       await fetch('https://formspree.io/f/PLACEHOLDER', {
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({email: document.getElementById('wl-email').value})
+        body:JSON.stringify({email:document.getElementById('wl-email-eng').value})
       });
       e.target.style.display = 'none';
       msg.style.display = 'block';
