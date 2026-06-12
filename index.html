@@ -592,6 +592,7 @@ footer {
   .hero-grid { gap: 40px; }
   section.hero { padding: 48px 0; }
   .section { padding: 56px 0; }
+  .cards-scroll { padding-top: 4px; margin-top: 0; padding-left: 22px; padding-right: 22px; scroll-padding-left: 22px; }
   .sekka-banner { margin: 0 22px; padding: 22px; }
   .banner-text { font-size: 17px; }
   .footer-inner { padding: 0 22px; }
@@ -601,7 +602,7 @@ footer {
   .nav-links a:not(.active) { display: none; }
   .nav-links a.active { display: inline; }
   main { padding-top: 56px; }
-  .project-card { min-width: 260px; max-width: 280px; }
+  .project-card { min-width: calc(100vw - 64px); max-width: calc(100vw - 64px); }
 
   /* Reviews on mobile — clamp to 4 lines, smaller text, no scroll surprise */
   .review-quote {
