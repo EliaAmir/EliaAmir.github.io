@@ -62,24 +62,26 @@ tailwind.config = {
   --outline: rgba(80,69,56,0.4);
   --fiverr:  #1DBF73;
   --linkedin:#0A66C2;
+  --btn-text: #1a1410;
   --transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 html.light {
-  --bg:      #f8f7f4;
-  --surface: #f0ede8;
-  --card:    #ffffff;
-  --border:  #e2dfd9;
-  --text:    #1a1714;
-  --muted:   #6b6560;
-  --gold:    #9a7020;
-  --outline: rgba(196,192,186,0.5);
+  --bg:      #f5f2ee;
+  --surface: #ede9e3;
+  --card:    #fdfcfb;
+  --border:  #ddd9d3;
+  --text:    #18140f;
+  --muted:   #5e5850;
+  --gold:    #c07c1a;
+  --outline: rgba(180,174,165,0.55);
+  --btn-text: #18140f;
 }
 
 /* ══════════════════════════════════════════
    BASE
 ══════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -135,12 +137,15 @@ nav {
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 .nav-links a.active { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
 .btn-hire {
-  background: var(--gold); color: var(--bg);
+  background: var(--gold); color: var(--btn-text);
   padding: 8px 22px; border-radius: 999px;
   font-size: 14px; font-weight: 700;
   border: none; cursor: pointer;
   transition: opacity 0.2s, transform 0.15s;
+  text-decoration: none;
+  display: inline-block;
 }
+a.btn-hire { color: var(--btn-text) !important; }
 .btn-hire:hover { opacity: 0.88; transform: translateY(-1px); }
 .btn-theme {
   width: 36px; height: 36px; border-radius: 50%;
@@ -158,8 +163,8 @@ main { padding-top: 72px; }
 .container {
   max-width: 1380px; margin: 0 auto; padding: 0 40px;
 }
-section.hero { padding: 60px 0 32px; }
-.section { padding: 80px 0; }
+section.hero { padding: 60px 0 32px; scroll-margin-top: 72px; }
+.section { padding: 80px 0; scroll-margin-top: 72px; }
 
 /* ══════════════════════════════════════════
    HERO
@@ -202,7 +207,9 @@ section.hero { padding: 60px 0 32px; }
   border: 1px solid var(--border);
   padding: 20px; border-radius: 10px;
   transition: var(--transition);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
+html.light .stat-card { box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
 .stat-num {
   font-family: "Fraunces", serif;
   font-size: 30px; font-weight: 500;
@@ -219,7 +226,7 @@ section.hero { padding: 60px 0 32px; }
 .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 32px; }
 .btn-primary {
   display: flex; align-items: center; gap: 8px;
-  background: var(--gold); color: var(--bg);
+  background: var(--gold); color: var(--btn-text);
   padding: 14px 28px; border-radius: 999px;
   font-weight: 700; font-size: 15px;
   border: none; cursor: pointer;
@@ -261,6 +268,7 @@ section.hero { padding: 60px 0 32px; }
   padding: 24px;
   transition: var(--transition);
 }
+html.light .proof-card { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
 .proof-card.fiverr  { border-top: 3px solid var(--fiverr); }
 .proof-card.linkedin{ border-top: 3px solid var(--linkedin); }
 .proof-label {
@@ -369,7 +377,7 @@ section.hero { padding: 60px 0 32px; }
 }
 .cards-scroll::-webkit-scrollbar { display: none; }
 .project-card {
-  min-width: 360px; flex-shrink: 0;
+  min-width: 300px; max-width: 340px; flex-shrink: 0;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -479,7 +487,7 @@ section.hero { padding: 60px 0 32px; }
   font-size: 20px; line-height: 1;
 }
 .btn-waitlist {
-  background: var(--gold); color: var(--bg);
+  background: var(--gold); color: var(--btn-text);
   padding: 12px 28px; border-radius: 999px;
   font-weight: 700; font-size: 14px;
   border: none; cursor: pointer;
@@ -518,6 +526,19 @@ section.hero { padding: 60px 0 32px; }
   white-space: nowrap;
 }
 .tl-body { font-size: 15px; color: var(--muted); line-height: 1.65; margin: 12px 0; max-width: 680px; }
+.tl-bullets {
+  list-style: none; padding: 0; margin: 12px 0;
+  max-width: 680px; display: flex; flex-direction: column; gap: 8px;
+}
+.tl-bullets li {
+  font-size: 15px; color: var(--muted); line-height: 1.65;
+  padding-left: 20px; position: relative;
+}
+.tl-bullets li::before {
+  content: "–";
+  position: absolute; left: 0;
+  color: var(--gold); font-weight: 700;
+}
 
 /* ══════════════════════════════════════════
    EDUCATION CARD
@@ -574,8 +595,33 @@ footer {
   .sekka-banner { margin: 0 22px; padding: 22px; }
   .banner-text { font-size: 17px; }
   .footer-inner { padding: 0 22px; }
-  .nav-links { gap: 16px; }
-  .project-card { min-width: 300px; }
+  .nav-links { gap: 10px; }
+  .nav-logo { font-size: 16px; white-space: nowrap; }
+  .nav-inner { height: 56px; }
+  .nav-links a:not(.active) { display: none; }
+  .nav-links a.active { display: inline; }
+  main { padding-top: 56px; }
+  .project-card { min-width: 260px; max-width: 280px; }
+
+  /* Reviews on mobile — clamp to 4 lines, smaller text, no scroll surprise */
+  .review-quote {
+    font-size: 12px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .linkedin-quote {
+    font-size: 12px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .proof-card { padding: 18px; }
+  .fiverr-slider { transition: none; }
 }
 
 /* ══════════════════════════════════════════
@@ -583,6 +629,50 @@ footer {
 ══════════════════════════════════════════ */
 .icon { font-family: "Material Symbols Outlined"; font-size: 18px; user-select: none; }
 .icon.sm { font-size: 14px; }
+
+/* ══════════════════════════════════════════
+   FLOATING NAV PILL
+══════════════════════════════════════════ */
+.float-nav {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--outline);
+  border-radius: 999px;
+  padding: 6px 10px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.fn-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: color 0.35s ease, background 0.35s ease;
+  white-space: nowrap;
+}
+.fn-link:hover { color: var(--text); }
+.fn-link.active {
+  color: var(--bg);
+  background: var(--gold);
+  font-weight: 700;
+  transition: color 0.35s ease, background 0.35s ease;
+}
+@media (max-width: 480px) {
+  .float-nav { gap: 0; padding: 5px 6px; bottom: 16px; }
+  .fn-link { font-size: 9px; padding: 5px 8px; letter-spacing: 0; }
+}
 </style>
 </head>
 
@@ -594,22 +684,27 @@ footer {
   <div class="nav-inner">
     <span class="nav-logo display">Elia Yacoub</span>
     <div class="nav-links">
-      <a href="#" class="active">Work</a>
-      <a href="#">Expertise</a>
-      <a href="#">Process</a>
-      <a href="#">Contact</a>
       <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">
         <span class="icon sm" id="themeIcon">light_mode</span>
       </button>
-      <button class="btn-hire">Hire Me</button>
+      <a href="mailto:eliaj320h@gmail.com" class="btn-hire">Contact Me</a>
     </div>
   </div>
 </nav>
 
+<!-- ═══════════════ FLOATING NAV PILL ═══════════════ -->
+<div class="float-nav" id="floatNav">
+  <a href="#sec-overview"   class="fn-link active" data-section="sec-overview">Overview</a>
+  <a href="#sec-projects"   class="fn-link"         data-section="sec-projects">Projects</a>
+  <a href="#sec-experience" class="fn-link"         data-section="sec-experience">Experience</a>
+  <a href="#sec-education"  class="fn-link"         data-section="sec-education">Education</a>
+  <a href="#sec-contact"    class="fn-link"         data-section="sec-contact">Contact</a>
+</div>
+
 <main>
 
 <!-- ═══════════════ HERO ═══════════════ -->
-<section class="hero">
+<section class="hero" id="sec-overview">
   <div class="container">
     <div class="hero-grid">
 
@@ -640,28 +735,28 @@ hardware repair with a track record of process improvement and client-facing com
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-num display">120%</div>
-            <div class="stat-label">Team Leadership Attainment</div>
+            <div class="stat-label">Team Attainment</div>
           </div>
           <div class="stat-card">
             <div class="stat-num display">+40</div>
-            <div class="stat-label">Countries - Clients from +40 Countries</div>
+            <div class="stat-label">Clients from +40 Countries</div>
           </div>
           <div class="stat-card">
             <div class="stat-num display">5.0★</div>
             <div class="stat-label">Fiverr · 96 Reviews</div>
           </div>
           <div class="stat-card" style="background: var(--gold); border-color: var(--gold); cursor: pointer;" onclick="window.open('https://forms.gle/73H91v8GYy41Qe29A','_blank')">
-            <div class="stat-num display" style="color: var(--bg);">2K+</div>
-            <div class="stat-label" style="color: var(--bg); opacity: 0.75;">Sekka Waitlist</div>
-            <div style="margin-top: 8px; font-size: 10px; color: var(--bg); opacity: 0.65; font-family: 'Hanken Grotesk', sans-serif; line-height: 1.4;">Cairo's multimodal transit app</div>
+            <div class="stat-num display" style="color: var(--btn-text);">2K+</div>
+            <div class="stat-label" style="color: var(--btn-text); opacity: 0.75;">Sekka Waitlist</div>
+            <div style="margin-top: 8px; font-size: 10px; color: var(--btn-text); opacity: 0.65; font-family: 'Hanken Grotesk', sans-serif; line-height: 1.4;">Cairo's multimodal transit app</div>
           </div>
         </div>
 
         <!-- CTAs -->
         <div class="cta-row">
-          <button class="btn-primary">
+          <a href="mailto:eliaj320h@gmail.com" class="btn-primary" style="text-decoration:none;">
             Get in touch <span class="icon sm">arrow_forward</span>
-          </button>
+          </a>
           <button class="btn-outline" onclick="window.open('https://forms.gle/73H91v8GYy41Qe29A','_blank')">
             <span style="width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block;" class="blink"></span>
             🚉 Join Sekka waitlist
@@ -670,10 +765,22 @@ hardware repair with a track record of process improvement and client-facing com
 
         <!-- Socials -->
         <div class="social-row">
-          <a class="social-icon" href="https://linkedin.com/in/eliayacoub" title="LinkedIn" target="_blank"><span class="icon sm">link</span></a>
-          <a class="social-icon" href="https://fiverr.com/eliaamir22" title="Fiverr" target="_blank"><span class="icon sm">grade</span></a>
-          <a class="social-icon" href="https://github.com/EliaAmir" title="GitHub" target="_blank"><span class="icon sm">terminal</span></a>
-          <a class="social-icon" href="https://youtube.com/@EliaAmir" title="YouTube" target="_blank"><span class="icon sm">play_circle</span></a>
+          <!-- LinkedIn -->
+          <a class="social-icon" href="https://linkedin.com/in/eliayacoub" title="LinkedIn" target="_blank" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.73a1.77 1.77 0 1 1 0-3.54 1.77 1.77 0 0 1 0 3.54zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.17 20 7 20 12.3V19z"/></svg>
+          </a>
+          <!-- Fiverr -->
+          <a class="social-icon" href="https://fiverr.com/eliaamir22" title="Fiverr" target="_blank" aria-label="Fiverr">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.342 8.642V7.5c0-.78.37-1.17 1.11-1.17h1.17V3.75h-1.95c-2.106 0-3.162 1.05-3.162 3.15v1.742H6.75v2.58h1.76V18h2.832v-6.778h1.95l.39-2.58h-2.34zm7.956-4.892a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-1.416 4.892V18h2.832V8.642h-2.832z"/></svg>
+          </a>
+          <!-- GitHub -->
+          <a class="social-icon" href="https://github.com/EliaAmir" title="GitHub" target="_blank" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a class="social-icon" href="https://youtube.com/@EliaAmir" title="YouTube" target="_blank" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
         </div>
       </div>
 
@@ -1254,7 +1361,7 @@ hardware repair with a track record of process improvement and client-facing com
 </section>
 
 <!-- ═══════════════ PROJECTS ═══════════════ -->
-<div class="section">
+<div class="section" id="sec-projects">
   <div class="container">
     <div class="projects-header">
       <h2 class="display">Latest Projects</h2>
@@ -1268,42 +1375,49 @@ hardware repair with a track record of process improvement and client-facing com
 
       <!-- Sekka -->
       <div class="project-card sekka" id="sekka-project">
-        <div class="card-eyebrow">Flagship · Multimodal · 2025</div>
+        <div class="card-eyebrow">Flagship · Multimodal · 2026</div>
         <span class="card-icon">🚇</span>
         <div class="card-title display">Sekka | سكة</div>
-        <div class="card-desc">Bridging Cairo's transport gap with real-time multimodal pathfinding.</div>
+        <div class="card-desc">Cairo has no app that combines Metro, Bus and Microbus into one route. Sekka fixes that — 573+ routes, 84 stations, 27 microbus hubs, custom Dijkstra engine.</div>
         <div class="chip-row">
           <span class="chip">Flutter</span>
-          <span class="chip">Dijkstra</span>
+          <span class="chip">Dart</span>
           <span class="chip">Firebase</span>
+          <span class="chip">Dijkstra</span>
         </div>
         <div class="hover-details">
-          <div class="detail-row"><span>Graph nodes</span><span class="detail-val">851 nodes · 17,274 edges</span></div>
-          <div class="detail-row"><span>Latency</span><span class="detail-val">&lt; 200ms</span></div>
+          <div class="detail-row"><span>Graph</span><span class="detail-val">851 nodes · 17,274 edges</span></div>
+          <div class="detail-row"><span>Routes</span><span class="detail-val">573+ bus · 27 microbus hubs · 84 metro stations</span></div>
+          <div class="detail-row"><span>Routing modes</span><span class="detail-val">Fastest · Cheapest · Fewest Transfers</span></div>
+          <div class="detail-row"><span>Grade</span><span class="detail-val">B.Sc. Graduation Project · Grade A</span></div>
         </div>
         <div class="card-footer">
           <span class="card-badge">Active Waiting List: 2,000+</span>
-          <span class="icon card-ext">open_in_new</span>
+          <a href="https://github.com/EliaAmir/sekka-cairo-transit" target="_blank" class="icon card-ext">open_in_new</a>
         </div>
       </div>
 
-      <!-- Zatona -->
-      <div class="project-card zatona">
-        <div class="card-eyebrow">OpenClaw · 2026</div>
-        <span class="card-icon" style="color:#5b97ff;">⚡</span>
-        <div class="card-title display">Jack - OpenClaw AI Agent</div>
-        <div class="card-desc">Hierarchical multi-agent framework orchestrating multiple LLM reasoning paths.</div>
+      <!-- Jack -->
+      <div class="project-card" style="border-top: 3px solid #ef4444; outline: 2px solid transparent; outline-offset: -1px; transition: transform 0.35s cubic-bezier(.4,0,.2,1), outline-color 0.35s ease, box-shadow 0.35s ease;" onmouseover="this.style.outlineColor='#ef4444';this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 48px rgba(239,68,68,0.15)'" onmouseout="this.style.outlineColor='transparent';this.style.transform='';this.style.boxShadow=''">
+        <div class="card-eyebrow">Local AI · Autonomous Agent · 2025</div>
+        <span class="card-icon" style="color:#ef4444;">🦞</span>
+        <div class="card-title display">Jack — OpenClaw Local LLM Agent</div>
+        <div class="card-desc">Fully local autonomous AI agent. Gemma 4 E4B on RTX 4060, OpenClaw framework, Fedora OS, Telegram interface. No API keys, no cloud, no cost.</div>
         <div class="chip-row">
-          <span class="chip">Gemma-E4B</span>
+          <span class="chip">OpenClaw</span>
+          <span class="chip">Gemma 4 E4B</span>
+          <span class="chip">Fedora</span>
           <span class="chip">Telegram Integration</span>
-          <span class="chip">Fedora OS Sandbox</span>
         </div>
         <div class="hover-details">
-          <div class="detail-row"><span>Core engine</span><span class="detail-val">Ollama</span></div>
+          <div class="detail-row"><span>Hardware</span><span class="detail-val">RTX 4060 · 16GB DDR4</span></div>
+          <div class="detail-row"><span>Inference</span><span class="detail-val">100% local — never leaves machine</span></div>
+          <div class="detail-row"><span>System access</span><span class="detail-val">Files · Email · Code · Spreadsheets</span></div>
+          <div class="detail-row"><span>Cost</span><span class="detail-val">$0 — zero API, zero cloud</span></div>
         </div>
         <div class="card-footer">
-          <span class="card-badge">Remote Tasks</span>
-          <span class="icon card-ext">open_in_new</span>
+          <span class="card-badge" style="color:#ef4444;">Zero Cloud · Zero Cost</span>
+          <a href="https://github.com/EliaAmir/jack-local-ai-agent" target="_blank" class="icon card-ext">open_in_new</a>
         </div>
       </div>
 
@@ -1316,14 +1430,116 @@ hardware repair with a track record of process improvement and client-facing com
         <div class="chip-row">
           <span class="chip">OpenCore</span>
           <span class="chip">ACPI</span>
+          <span class="chip">macOS</span>
+          <span class="chip">HP EliteBook</span>
         </div>
         <div class="hover-details">
           <div class="detail-row"><span>Power state</span><span class="detail-val" style="color:#b4b2a9;">Fully Working macOS on HP</span></div>
           <div class="detail-row"><span>Graphics</span><span class="detail-val" style="color:#b4b2a9;">First macOS with Touchscreen</span></div>
+          <div class="detail-row"><span>Boot</span><span class="detail-val" style="color:#b4b2a9;">OpenCore — ACPI SSDT injected</span></div>
+          <div class="detail-row"><span>Status</span><span class="detail-val" style="color:#b4b2a9;">Daily driver — stable since launch</span></div>
         </div>
         <div class="card-footer">
           <span class="card-badge">Stable Since Rel.</span>
           <span class="icon card-ext">open_in_new</span>
+        </div>
+      </div>
+
+<!-- HelpDeskEddy Telegram Notifier -->
+      <div class="project-card" style="border-top: 3px solid #38bdf8; outline: 2px solid transparent; outline-offset: -1px; transition: transform 0.35s cubic-bezier(.4,0,.2,1), outline-color 0.35s ease, box-shadow 0.35s ease;" onmouseover="this.style.outlineColor='#38bdf8';this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 48px rgba(56,189,248,0.12)'" onmouseout="this.style.outlineColor='transparent';this.style.transform='';this.style.boxShadow=''">
+        <div class="card-eyebrow">Chrome Extension · Automation · 2026</div>
+        <span class="card-icon" style="color:#38bdf8;">🔔</span>
+        <div class="card-title display">HelpDesk Telegram Notifier</div>
+        <div class="card-desc">Chrome extension that monitors HelpDesk for unanswered tickets and fires real-time Telegram + email alerts. Built to solve a real SLA problem during L1 support shifts.</div>
+        <div class="chip-row">
+          <span class="chip">JavaScript</span>
+          <span class="chip">Chrome Extension</span>
+          <span class="chip">Telegram Bot</span>
+          <span class="chip">EmailJS API</span>
+        </div>
+        <div class="hover-details">
+          <div class="detail-row"><span>Trigger</span><span class="detail-val" style="color:#38bdf8;">DOM polling every 2s — zero missed tickets</span></div>
+          <div class="detail-row"><span>Alerts</span><span class="detail-val" style="color:#38bdf8;">Telegram + Email — dual channel, 55s cooldown</span></div>
+          <div class="detail-row"><span>Persistence</span><span class="detail-val" style="color:#38bdf8;">chrome.storage.local — survives page refresh</span></div>
+          <div class="detail-row"><span>Result</span><span class="detail-val" style="color:#38bdf8;">99% SLA compliance after deployment</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-badge" style="color:#38bdf8;">Live at Syrve</span>
+          <a href="https://github.com/EliaAmir/HelpDeskEddy-telegram-notfier" target="_blank" class="icon card-ext">open_in_new</a>
+        </div>
+      </div>
+
+
+<!-- Zatona -->
+      <div class="project-card zatona">
+        <div class="card-eyebrow">Multi-Agent · AI System · 2025</div>
+        <span class="card-icon" style="color:#5b97ff;">⚡</span>
+        <div class="card-title display">Zatona — Hermes Local LLM Agent</div>
+        <div class="card-desc">Multi-agent AI system on Hermes framework. Qwen3-Coder primary with 3-model fallback chain via OpenRouter. Local SearXNG web search. Zero recurring cost.</div>
+        <div class="chip-row">
+          <span class="chip">Qwen3-Coder</span>
+          <span class="chip">OpenRouter</span>
+          <span class="chip">SearXNG</span>
+          <span class="chip">Hermes Framework</span>
+          <span class="chip">Ubuntu Sandbox</span>
+        </div>
+        <div class="hover-details">
+          <div class="detail-row"><span>Primary model</span><span class="detail-val">Qwen3-Coder (free tier)</span></div>
+          <div class="detail-row"><span>Fallback chain</span><span class="detail-val">Gemma 4 31B · Nemotron 120B · GLM 4.5</span></div>
+          <div class="detail-row"><span>Web search</span><span class="detail-val">SearXNG — local, unlimited, $0</span></div>
+          <div class="detail-row"><span>Smart routing</span><span class="detail-val">&lt;160 chars → GLM to preserve quota</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-badge">Production Ready</span>
+          <a href="https://github.com/EliaAmir/zatona-ai-agent-system" target="_blank" class="icon card-ext">open_in_new</a>
+        </div>
+      </div>
+
+      <!-- Hackintosh: Ryzen + GTX 760 Big Sur -->
+      <div class="project-card" style="border-top: 3px solid #b4b2a9; outline: 2px solid transparent; outline-offset: -1px; transition: transform 0.35s cubic-bezier(.4,0,.2,1), outline-color 0.35s ease, box-shadow 0.35s ease;" onmouseover="this.style.outlineColor='#b4b2a9';this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 48px rgba(180,178,169,0.12)'" onmouseout="this.style.outlineColor='transparent';this.style.transform='';this.style.boxShadow=''">
+        <div class="card-eyebrow">Hackintosh · AMD · Nvidia · 2023</div>
+        <span class="card-icon" style="color:#b4b2a9;">🖥️</span>
+        <div class="card-title display">macOS Big Sur · Ryzen + GTX 760</div>
+        <div class="card-desc">macOS Big Sur on AMD Ryzen 3 1200 + GTX 760 (Kepler). Custom AMD kernel patches, OpenCore bootloader, USB mapping. Big Sur is the ceiling for Kepler GPUs.</div>
+        <div class="chip-row">
+          <span class="chip">OpenCore</span>
+          <span class="chip">AMD Ryzen</span>
+          <span class="chip">GTX 760</span>
+          <span class="chip">Big Sur</span>
+        </div>
+        <div class="hover-details">
+          <div class="detail-row"><span>CPU</span><span class="detail-val" style="color:#b4b2a9;">AMD Ryzen 3 1200 — custom kernel patches</span></div>
+          <div class="detail-row"><span>GPU</span><span class="detail-val" style="color:#b4b2a9;">GTX 760 Kepler — native Big Sur support</span></div>
+          <div class="detail-row"><span>Ceiling</span><span class="detail-val" style="color:#b4b2a9;">Big Sur max — Kepler dropped in Monterey</span></div>
+          <div class="detail-row"><span>Status</span><span class="detail-val" style="color:#b4b2a9;">Boot · GPU · USB · Audio — all working</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-badge" style="color:#b4b2a9;">Stable Build</span>
+          <a href="https://github.com/EliaAmir/hackintosh-ryzen-gtx760-bigsur" target="_blank" class="icon card-ext">open_in_new</a>
+        </div>
+      </div>
+
+      <!-- Hackintosh: HP ay070ne Catalina -->
+      <div class="project-card" style="border-top: 3px solid #b4b2a9; outline: 2px solid transparent; outline-offset: -1px; transition: transform 0.35s cubic-bezier(.4,0,.2,1), outline-color 0.35s ease, box-shadow 0.35s ease;" onmouseover="this.style.outlineColor='#b4b2a9';this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 48px rgba(180,178,169,0.12)'" onmouseout="this.style.outlineColor='transparent';this.style.transform='';this.style.boxShadow=''">
+        <div class="card-eyebrow">Hackintosh · Intel · Laptop · 2022</div>
+        <span class="card-icon" style="color:#b4b2a9;">💻</span>
+        <div class="card-title display">macOS Catalina · HP ay070ne</div>
+        <div class="card-desc">macOS Catalina on HP ay070ne with Intel i3 6th gen (Skylake). Full graphics, audio, trackpad, battery, sleep/wake — all working. WiFi resolved via USB adapter.</div>
+        <div class="chip-row">
+          <span class="chip">OpenCore</span>
+          <span class="chip">Intel Skylake</span>
+          <span class="chip">Catalina</span>
+          <span class="chip">HP Laptop</span>
+        </div>
+        <div class="hover-details">
+          <div class="detail-row"><span>CPU</span><span class="detail-val" style="color:#b4b2a9;">Intel Core i3 6th Gen (Skylake)</span></div>
+          <div class="detail-row"><span>GPU</span><span class="detail-val" style="color:#b4b2a9;">Intel HD 520 — full acceleration</span></div>
+          <div class="detail-row"><span>Working</span><span class="detail-val" style="color:#b4b2a9;">Graphics · Audio · Trackpad · Battery · Sleep</span></div>
+          <div class="detail-row"><span>WiFi fix</span><span class="detail-val" style="color:#b4b2a9;">USB adapter — plug and play, no kexts</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-badge" style="color:#b4b2a9;">Stable Build</span>
+          <a href="https://github.com/EliaAmir/hackintosh-hp-ay070ne-catalina" target="_blank" class="icon card-ext">open_in_new</a>
         </div>
       </div>
 
@@ -1342,7 +1558,7 @@ hardware repair with a track record of process improvement and client-facing com
 </div>
 
 <!-- ═══════════════ EXPERIENCE ═══════════════ -->
-<div class="section">
+<div class="section" id="sec-experience">
   <div class="container">
     <div class="section-heading-row">
       <h2 class="display">Experience</h2>
@@ -1360,7 +1576,11 @@ hardware repair with a track record of process improvement and client-facing com
           </div>
           <div class="tl-date mono">Apr 2026 — Present</div>
         </div>
-        <p class="tl-body">Remote technical support across EMEA; configuring Syrve POS on Windows and macOS for hospitality clients, troubleshooting hardware, software, and network issues, customizing client invoices through script editing, managing tickets and remote-access sessions across a globally distributed team.</p>
+        <ul class="tl-bullets">
+          <li>Provide remote technical support across EMEA, installing and configuring Syrve POS software on Windows and macOS for hospitality clients.</li>
+          <li>Troubleshoot hardware, software, and network issues including printer connectivity via Ethernet and TCP/IP; customize client invoices through script editing and escalate bugs to the development team.</li>
+          <li>Manage IT support tickets and remote access sessions while delivering tailored solutions to clients across a globally distributed team.</li>
+        </ul>
         <div class="chip-row">
           <span class="chip">Syrve</span><span class="chip">POS</span>
           <span class="chip">EMEA</span><span class="chip">ESC/POS</span><span class="chip">TCP/IP</span>
@@ -1376,7 +1596,10 @@ hardware repair with a track record of process improvement and client-facing com
           </div>
           <div class="tl-date mono">Aug 2025 — Apr 2026</div>
         </div>
-        <p class="tl-body">Led technical support teams of 8–16, owning schedules, KPIs, and performance coaching. Held the lowest repeated-call rate in the department for 6 consecutive months. Root-cause analysis to identify failure patterns and implement corrective workflows.</p>
+        <ul class="tl-bullets">
+          <li>Led technical support teams of 8–16 members, managing schedules, KPIs, and performance coaching while maintaining the lowest repeated call rate in the department for 5 consecutive months.</li>
+          <li>Conducted root cause analysis (RCA) to identify failure patterns and implement corrective workflows.</li>
+        </ul>
         <div class="chip-row">
           <span class="chip">Team Leadership</span><span class="chip">KPIs</span>
           <span class="chip">Coaching</span><span class="chip">BPO</span>
@@ -1392,7 +1615,10 @@ hardware repair with a track record of process improvement and client-facing com
           </div>
           <div class="tl-date mono">Apr 2025 — Aug 2025</div>
         </div>
-        <p class="tl-body">Delivered technical trainings on product troubleshooting, CRM systems, and escalation procedures. Upskilled 12 underperforming agents to 120% performance attainment.</p>
+        <ul class="tl-bullets">
+          <li>Delivered technical trainings on product troubleshooting, CRM systems, and escalation procedures.</li>
+          <li>Upskilled 12 underperforming agents to proficiency, achieving 120% performance attainment.</li>
+        </ul>
         <div class="chip-row">
           <span class="chip">Training</span><span class="chip">CRM</span><span class="chip">Escalations</span>
         </div>
@@ -1407,7 +1633,11 @@ hardware repair with a track record of process improvement and client-facing com
           </div>
           <div class="tl-date mono">May 2024 — Apr 2025</div>
         </div>
-        <p class="tl-body">Selected to launch AT&T Internet Air as a new line of business at Sutherland — providing real-time floor support to 80+ agents. Identified and implemented 39+ process improvements to reduce repeated calls and AHT.</p>
+        <ul class="tl-bullets">
+          <li>Selected to launch new line of business (AT&T Internet Air); provided real-time technical support to 80+ agents on the floor.</li>
+          <li>Identified and implemented 39+ process improvements to reduce repeated calls and optimize Average Handling Time.</li>
+          <li>Managed high-priority escalation calls for US Broadband &amp; Wireless accounts.</li>
+        </ul>
         <div class="chip-row">
           <span class="chip">SME</span><span class="chip">Process Improvement</span><span class="chip">AT&T</span>
         </div>
@@ -1418,7 +1648,7 @@ hardware repair with a track record of process improvement and client-facing com
 </div>
 
 <!-- ═══════════════ EDUCATION ═══════════════ -->
-<div class="section" style="padding-top: 0;">
+<div class="section" id="sec-education" style="padding-top: 0;">
   <div class="container">
     <div class="section-heading-row">
       <h2 class="display">Education</h2>
@@ -1435,12 +1665,51 @@ hardware repair with a track record of process improvement and client-facing com
       </div>
       <div class="edu-body">
         <span class="edu-badge mono">Graduation project: Sekka | سكة · Grade A</span>
+        <span class="edu-badge mono" style="margin-left: 10px;">GPA 3</span>
+      </div>
+    </div>
+
+    <div class="edu-card" style="margin-top: 16px;">
+      <div class="edu-header">
+        <div>
+          <div class="edu-title display">IELTS — English Proficiency</div>
+          <div class="edu-inst">British Council</div>
+          <div class="edu-sub">International English Language Testing System</div>
+        </div>
+        <div class="tl-date mono">2023</div>
+      </div>
+      <div class="edu-body">
+        <span class="edu-badge mono">Band Score: 6.5 · Upper Intermediate · CEFR B2</span>
       </div>
     </div>
   </div>
 </div>
 
 </main>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<div class="section" id="sec-contact" style="padding-bottom: 40px;">
+  <div class="container">
+    <div class="section-heading-row">
+      <h2 class="display">Contact</h2>
+      <div class="heading-rule"></div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+      <a href="mailto:eliaj320h@gmail.com" class="btn-primary" style="text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email Me
+      </a>
+      <a href="https://linkedin.com/in/eliayacoub" target="_blank" class="btn-outline" style="text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.73a1.77 1.77 0 1 1 0-3.54 1.77 1.77 0 0 1 0 3.54zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.17 20 7 20 12.3V19z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://fiverr.com/eliaamir22" target="_blank" class="btn-outline" style="text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.342 8.642V7.5c0-.78.37-1.17 1.11-1.17h1.17V3.75h-1.95c-2.106 0-3.162 1.05-3.162 3.15v1.742H6.75v2.58h1.76V18h2.832v-6.778h1.95l.39-2.58h-2.34zm7.956-4.892a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-1.416 4.892V18h2.832V8.642h-2.832z"/></svg>
+        Fiverr
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
@@ -1496,6 +1765,7 @@ function makeSlider(sliderId, prevId, nextId, cardId, interval) {
   const container = document.getElementById(sliderId);
   const card      = document.getElementById(cardId);
   const slides    = Array.from(container.querySelectorAll('.fiverr-slide'));
+  const isMobile  = window.innerWidth <= 768;
   let current = 0;
   let timer;
   let paused = false;
@@ -1526,21 +1796,83 @@ function makeSlider(sliderId, prevId, nextId, cardId, interval) {
 
   function next() { show(current + 1); }
   function prev() { show(current - 1); }
-  function startAuto() { if (!paused) timer = setInterval(next, interval); }
+  function startAuto() { if (!paused && !isMobile) timer = setInterval(next, interval); }
   function stopAuto()  { clearInterval(timer); }
 
-  document.getElementById(prevId).addEventListener('click', () => { stopAuto(); prev(); if (!paused) startAuto(); });
-  document.getElementById(nextId).addEventListener('click', () => { stopAuto(); next(); if (!paused) startAuto(); });
+  document.getElementById(prevId).addEventListener('click', () => { stopAuto(); next(); if (!isMobile) startAuto(); });
+  document.getElementById(nextId).addEventListener('click', () => { stopAuto(); prev(); if (!isMobile) startAuto(); });
 
-  // Pause on hover — attached to the whole card
-  card.addEventListener('mouseenter', () => { paused = true;  stopAuto(); });
-  card.addEventListener('mouseleave', () => { paused = false; stopAuto(); startAuto(); });
+  // Hover pause — desktop only
+  if (!isMobile) {
+    card.addEventListener('mouseenter', () => { paused = true;  stopAuto(); });
+    card.addEventListener('mouseleave', () => { paused = false; stopAuto(); startAuto(); });
+  }
 
   startAuto();
 }
 
 makeSlider('fiverrSlider',   'fiverrPrev',   'fiverrNext',   'fiverrCard',   8000);
 makeSlider('linkedinSlider', 'linkedinPrev', 'linkedinNext', 'linkedinCard', 10000);
+
+/* ═══════════════════════════════════════
+   FLOATING NAV SCROLL SPY
+═══════════════════════════════════════ */
+(function() {
+  const links = document.querySelectorAll('.fn-link');
+  const sections = ['sec-overview','sec-projects','sec-experience','sec-education','sec-contact'];
+
+  // Smooth scroll on click
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.dataset.section;
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Scroll spy — smooth active highlight as you scroll
+  let rafPending = false;
+  function onScroll() {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(() => {
+      if (!lockActive) {
+        const offset = window.innerHeight * 0.35;
+        const nearBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 80;
+        let current = sections[0];
+        if (nearBottom) {
+          current = sections[sections.length - 1];
+        } else {
+          sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top <= offset) current = id;
+          });
+        }
+        links.forEach(link => {
+          link.classList.toggle('active', link.dataset.section === current);
+        });
+      }
+      rafPending = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // On click — immediately set active, lock it during scroll animation
+  let lockActive = null;
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      if (lockActive) clearTimeout(lockActive);
+      lockActive = setTimeout(() => { lockActive = null; onScroll(); }, 1200);
+    });
+  });
+
+  onScroll();
+})();
 
 /* ═══════════════════════════════════════
    CAROUSEL DRAG + BUTTON SCROLL
